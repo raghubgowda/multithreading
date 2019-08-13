@@ -1,6 +1,7 @@
 package com.raghu;
 
 import java.util.concurrent.atomic.AtomicInteger;
+
 public class AtomicIntegerExample{
     public static void main(String[] args){
         Worker worker = new Worker();
@@ -38,7 +39,6 @@ class Worker{
             //Keep calm and continue
         }
 
-        System.out.println("NormalCounter now is "+ normalCounter);
-        System.out.println("AtomicCounter now is "+ atomicCounter);
+        System.out.println("Counters after both the threads are finished: NormalCounter - "+normalCounter+" & AtomicCounter - "+atomicCounter);
     }
 }
