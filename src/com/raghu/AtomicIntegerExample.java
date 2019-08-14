@@ -1,7 +1,11 @@
 package com.raghu;
 
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.logging.Logger;
 
+/**
+ * @author RaghuBGowda
+ */
 public class AtomicIntegerExample{
     public static void main(String[] args){
         Worker worker = new Worker();
@@ -10,6 +14,7 @@ public class AtomicIntegerExample{
 }
 
 class Worker{
+    private Logger logger = Logger.getGlobal();
     private AtomicInteger atomicCounter = new AtomicInteger(0);
     private long normalCounter = 0L;
 
@@ -38,7 +43,6 @@ class Worker{
         catch(Exception ex){
             //Keep calm and continue
         }
-
-        System.out.println("Counters after both the threads are finished: NormalCounter - "+normalCounter+" & AtomicCounter - "+atomicCounter);
+        logger.info("Counters after both the threads are finished: NormalCounter - "+normalCounter+" & AtomicCounter - "+atomicCounter);
     }
 }
